@@ -1,7 +1,7 @@
 /* ==========================================================================
-   REGLAS GENERALES Y TIPOGRAFÍA
+   1. REGLAS GENERALES Y TIPOGRAFÍA
    ========================================================================== */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,7 +18,7 @@ body {
 }
 
 /* ==========================================================================
-   TOPBAR
+   2. TOPBAR
    ========================================================================== */
 .topbar {
     background: #04356d;
@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5px 20px;
+    padding: 5px 20px;
     font-size: 14px;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 /* ==========================================================================
-   BARRA DE NAVEGACIÓN (Efecto Liquid Glass)
+   3. HEADER Y BARRA DE NAVEGACIÓN (Efecto Liquid Glass)
    ========================================================================== */
 header {
     height: 90px;
@@ -72,6 +72,42 @@ header {
 
 .logo img {
     height: 70px;
+}
+
+/* Botón Hamburguesa (Oculto en escritorio) */
+.menu-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #002d62; /* Azul oscuro institucional */
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animación a "X" al estar activo */
+.menu-hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: #0099ff; /* Cambia a azul brillante */
+}
+
+.menu-hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.menu-hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: #0099ff;
 }
 
 .menu {
@@ -97,7 +133,7 @@ header {
     color: #0099ff;
 }
 
-/* SUBMENÚ VIDRIO LÍQUIDO */
+/* SUBMENÚ VIDRIO LÍQUIDO (Escritorio) */
 .submenu {
     position: absolute;
     top: 45px;
@@ -135,7 +171,7 @@ header {
 }
 
 /* ==========================================================================
-   ESTILOS GENERALES DE BOTONES (Liquid Glass Core)
+   4. ESTILOS GENERALES DE BOTONES (Liquid Glass Core)
    ========================================================================== */
 .btn-menu, .btn-saber, .btn-detalles, .btn-q10, .formulario button {
     display: inline-block;
@@ -155,7 +191,6 @@ header {
         inset 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Variaciones de color para Botones */
 .btn-menu, .btn-saber, .btn-detalles, .formulario button {
     background: linear-gradient(135deg, rgba(0, 153, 255, 0.75), rgba(0, 85, 255, 0.45));
     color: white;
@@ -168,7 +203,6 @@ header {
     padding: 15px 35px;
 }
 
-/* Hover Global de Botones Líquidos */
 .btn-menu:hover, .btn-saber:hover, .btn-detalles:hover, .btn-q10:hover, .formulario button:hover {
     transform: translateY(-3px) scale(1.02);
     border: 1px solid rgba(255, 255, 255, 0.7);
@@ -179,7 +213,6 @@ header {
         inset 0 4px 8px rgba(255, 255, 255, 0.7);
 }
 
-/* Efecto de destello interior líquido */
 .btn-menu::before, .btn-saber::before, .btn-detalles::before, .btn-q10::before, .formulario button::before {
     content: '';
     position: absolute;
@@ -197,7 +230,7 @@ header {
 }
 
 /* ==========================================================================
-   HERO / SLIDER
+   5. HERO / SLIDER
    ========================================================================== */
 .hero {
     height: 85vh;
@@ -265,8 +298,14 @@ header {
     line-height: 1.8;
 }
 
+.hero-botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
 /* ==========================================================================
-   CINTA INFORMATIVA CAROUSEL
+   6. CINTA INFORMATIVA CAROUSEL
    ========================================================================== */
 .cinta-carousel {
     background: #0099ff;
@@ -294,7 +333,7 @@ header {
 }
 
 /* ==========================================================================
-   SECCIÓN QUIÉNES SOMOS
+   7. SECCIÓN QUIÉNES SOMOS
    ========================================================================== */
 .quienes-somos {
     padding: 100px 8%;
@@ -336,7 +375,7 @@ header {
 }
 
 /* ==========================================================================
-   SECCIÓN INSTITUCIONAL (Tarjetas Misión / Visión)
+   8. SECCIÓN INSTITUCIONAL (Tarjetas Misión / Visión)
    ========================================================================== */
 .institucional {
     padding: 90px 8%;
@@ -372,7 +411,7 @@ header {
 }
 
 /* ==========================================================================
-   SECCIÓN PROGRAMAS ACADÉMICOS
+   9. SECCIÓN PROGRAMAS ACADÉMICOS
    ========================================================================== */
 .programas {
     padding: 100px 8%;
@@ -438,7 +477,7 @@ header {
 }
 
 /* ==========================================================================
-   SECCIÓN Q10 PLATAFORMA
+   10. SECCIÓN Q10 PLATAFORMA
    ========================================================================== */
 .q10-section {
     padding: 100px 8%;
@@ -475,7 +514,7 @@ header {
 }
 
 /* ==========================================================================
-   SECCIÓN GALERÍA
+   11. SECCIÓN GALERÍA
    ========================================================================== */
 .galeria {
     padding: 100px 8%;
@@ -500,7 +539,7 @@ header {
 }
 
 /* ==========================================================================
-   SECCIÓN NOTICIAS
+   12. SECCIÓN NOTICIAS
    ========================================================================== */
 .noticias {
     padding: 100px 8%;
@@ -540,7 +579,7 @@ header {
 }
 
 /* ==========================================================================
-   SECCIÓN CONTACTO Y FORMULARIO
+   13. SECCIÓN CONTACTO Y FORMULARIO
    ========================================================================== */
 .contacto {
     padding: 100px 8%;
@@ -626,7 +665,7 @@ header {
 }
 
 /* ==========================================================================
-   FOOTER
+   14. FOOTER
    ========================================================================== */
 footer {
     background: #001c3d;
@@ -667,7 +706,7 @@ footer {
 }
 
 /* ==========================================================================
-   ANIMACIONES SCROLL REVEAL Y ADICIONALES
+   15. ANIMACIONES SCROLL REVEAL Y ADICIONALES
    ========================================================================== */
 .reveal {
     opacity: 0;
@@ -695,68 +734,227 @@ footer {
     box-shadow: 0 0 15px rgba(0,153,255,0.4);
 }
 
-/* WHATSAPP FLOTANTE */
+/* ==========================================================================
+   16. WHATSAPP FLOTANTE (Efecto Liquid Glass)
+   ========================================================================== */
 .btn-whatsapp {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #25d366;
+    width: 65px;
+    height: 65px;
+    background: rgba(37, 211, 102, 0.15); 
     border-radius: 50%;
-    padding: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
     z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    border-left: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 45, 98, 0.2),
+        inset 0 4px 12px rgba(255, 255, 255, 0.4),
+        inset 0 -4px 12px rgba(37, 211, 102, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .btn-whatsapp img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.btn-whatsapp::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: rotate(45deg);
+    transition: 0.6s;
+    opacity: 0;
+    z-index: 1;
+}
+
+.btn-whatsapp:hover {
+    background: rgba(37, 211, 102, 0.25);
+    transform: translateY(-5px) scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 
+        0 15px 35px 0 rgba(37, 211, 102, 0.3),
+        inset 0 4px 18px rgba(255, 255, 255, 0.6),
+        inset 0 -4px 18px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp:hover::before {
+    left: 100%;
+    opacity: 1;
+}
+
+.btn-whatsapp:hover img {
+    transform: scale(1.1) rotate(8deg);
 }
 
 .tooltip {
     visibility: hidden;
     opacity: 0;
-    background: #002d62;
+    background: rgba(0, 45, 92, 0.85);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     color: #fff;
     text-align: center;
-    border-radius: 6px;
-    padding: 6px 12px;
+    border-radius: 8px;
+    padding: 8px 14px;
     position: absolute;
-    right: 65px;
+    right: 80px;
     white-space: nowrap;
-    transition: opacity 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     font-size: 13px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-weight: 600;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(10px);
 }
 
 .btn-whatsapp:hover .tooltip {
     visibility: visible;
     opacity: 1;
+    transform: translateX(0);
+}/* ==========================================================================
+   MODIFICACIÓN: WhatsApp más grande en Escritorio / Computador
+   ========================================================================== */
+@media (min-width: 992px) {
+    .btn-whatsapp {
+        width: 80px;  /* Antes medía 65px */
+        height: 80px; /* Antes medía 65px */
+        bottom: 30px; /* Lo separamos un poco más del borde inferior */
+        right: 30px;  /* Lo separamos un poco más del borde derecho */
+    }
+
+    .btn-whatsapp img {
+        width: 45px;  /* El icono interno antes medía 35px */
+        height: 45px;
+    }
+    
+    .tooltip {
+        right: 95px;  /* Ajustamos la posición del texto flotante para que no se pise con el botón */
+        font-size: 15px; /* Hacemos el texto del tooltip un poco más legible */
+    }
 }
 
 /* ==========================================================================
-   DISEÑO RESPONSIVO (MEDIA QUERIES)
+   17. DISEÑO RESPONSIVO (MEDIA QUERIES UNIFICADAS)
    ========================================================================== */
-@media(max-width:991px){
-    .topbar { display:none; }
-    header { padding:20px; flex-direction:column; height:auto; }
-    .menu { flex-wrap:wrap; justify-content:center; margin:20px 0; gap: 20px; }
-    .contenido h1 { font-size:45px; }
-    .contenedor, .q10-contenedor, .contacto-contenedor { grid-template-columns:1fr; gap: 40px; }
-    .cards { grid-template-columns:1fr; }
-    .grid-galeria { grid-template-columns:1fr 1fr; }
-    .grid-noticias { grid-template-columns:1fr; }
-    .footer-contenedor { grid-template-columns:1fr; }
+@media (max-width: 991px) {
+    .topbar { 
+        display: none; 
+    }
+    
+    header { 
+        padding: 0 30px; 
+        height: 90px;
+        justify-content: space-between;
+    }
+
+    .menu-hamburger {
+        display: flex;
+        order: 2; /* Control de orden para el flujo flex */
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    header .btn-menu {
+        display: none; /* Oculta botón de menú largo en móviles */
+    }
+
+    /* Panel de navegación lateral/vertical móvil */
+    header nav {
+        position: fixed;
+        top: 90px;
+        left: -100%; /* Oculto a la izquierda por defecto */
+        width: 300px; /* Ancho cómodo para panel lateral */
+        height: calc(100vh - 90px);
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 5px 0 25px rgba(0,0,0,.15);
+        transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        padding: 40px 30px;
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    /* Clase activa controlada mediante JS */
+    header nav.active {
+        left: 0;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu a {
+        font-size: 17px;
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    /* Submenús adaptados a formato vertical en móviles */
+    .submenu {
+        position: relative;
+        top: 0 !important;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+        background: #f7f9fc;
+        opacity: 1;
+        visibility: visible;
+        display: none; /* Se controlará vía clicks en JS o fallback hover */
+        margin-top: 5px;
+        padding-left: 15px;
+        border-radius: 6px;
+    }
+
+    .dropdown:hover .submenu {
+        display: block;
+    }
+
+    /* Estructuras generales pasadas a una sola columna */
+    .contenido h1 { font-size: 45px; }
+    .contenedor, .q10-contenedor, .contacto-contenedor { grid-template-columns: 1fr; gap: 40px; }
+    .cards { grid-template-columns: 1fr; }
+    .grid-galeria { grid-template-columns: 1fr 1fr; }
+    .grid-noticias { grid-template-columns: 1fr; }
+    .footer-contenedor { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-    .titulo-seccion h2, .info-contacto h2, .texto h2, .q10-texto h2 { font-size:32px; }
+    .titulo-seccion h2, .info-contacto h2, .texto h2, .q10-texto h2 { 
+        font-size: 32px; 
+    }
 }
 
-@media(max-width:600px) {
-    .contenido h1 { font-size:34px; }
-    .contenido p { font-size:16px; }
-    .grid-galeria { grid-template-columns:1fr; }
+@media (max-width: 600px) {
+    .contenido h1 { font-size: 34px; }
+    .contenido p { font-size: 16px; }
+    .hero-botones { flex-direction: column; }
+    .grid-galeria { grid-template-columns: 1fr; }
 }
